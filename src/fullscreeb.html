@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("keypress", function(e) {
+  if (e.keyCode === 13) {
+    toggleFullScreen();
+  }
+}, false);
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen(); 
+    }
+  }
+}
+
+$(window).on('keydown', handleKeyEvents);
+
+function handleKeyEvents (e) {
+    if(e.which == 122) {
+        e.preventDefault();
+        alert("Override here");
+    }
+}
+
+    </script>
+</head>
+<body>
+    Hello Bhaiyo
+</body>
+</html>
